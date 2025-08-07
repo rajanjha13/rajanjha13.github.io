@@ -1,0 +1,45 @@
+body {
+  font-family: 'Fira Code', 'Roboto', sans-serif;
+  background: #081229;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 1rem 1rem;
+}
+.avatar {
+  width: 130px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  border: 3px solid #00ffbc;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,255,188,0.5);}
+  70% { box-shadow: 0 0 0 15px rgba(0,255,188,0);}
+  100% { box-shadow: 0 0 0 0 rgba(0,255,188,0);}
+}
+.highlight { color: #00ffbc; }
+.typing { font-size: 1.3rem; margin: 0.7rem 0; color: #00ffbc; }
+.animated-icons span { font-size: 1.5rem; margin: 0 0.3rem; animation: bounce 1.2s infinite alternate; }
+@keyframes bounce { to { transform: translateY(-8px); } }
+.social-btns a {
+  display: inline-block; margin: 0.3rem;
+  background: #00ffbc; color: #181818;
+  padding: 0.6rem 1.2rem; border-radius: 2rem;
+  transition: background 0.2s; text-decoration: none; font-weight: 600;
+}
+.social-btns a:hover { background: #009c8a; color: #fff; }
+.resume-btn {
+  display: inline-block; background: #fff; color: #081229;
+  margin: 1rem auto 0 auto; padding: 0.7rem 2rem;
+  border-radius: 3rem; font-weight: bold; font-size: 1.1rem;
+  box-shadow: 0 2px 8px #00ffbc22; text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.resume-btn:hover { background: #00ffbc; color: #fff; }
+.about { max-width: 600px; margin: 2rem auto 0 auto; background: #181d2a; padding: 2rem; border-radius: 1rem;}
+.about ul { text-align: left; }
+.footer { text-align: center; color: #aaa; margin-top: 2rem; font-size: 0.9rem;}
