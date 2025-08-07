@@ -6,42 +6,343 @@
   <title>Rajan Kumar Jha | Data Analyst Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fira Code', 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #20264d 0%, #141d2b 100%);
+      color: #f6f6f6;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .hero {
+      text-align: center;
+      padding: 3.2rem 1rem 2.5rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .avatar {
+      width: 135px;
+      border-radius: 50%;
+      border: 3px solid #00ffbc;
+      background: #fff;
+      box-shadow: 0 0 24px #00ffbc70;
+      margin-bottom: 1.4rem;
+      animation: pulse 2.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 #00ffbc55;}
+      70% { box-shadow: 0 0 0 15px #00ffbc22;}
+      100% { box-shadow: 0 0 0 0 #00ffbc00;}
+    }
+    h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.45rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .highlight {
+      color: #00ffbc;
+      font-weight: bold;
+    }
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      border-right: .12em solid #00ffbc;
+      white-space: nowrap;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #00ffbc;
+      letter-spacing: 0.3px;
+      margin-top: 0.2rem;
+      min-height: 1.7em;
+      background: none;
+    }
+    .animated-icons {
+      margin: 1rem 0 0.8rem 0;
+      letter-spacing: 6px;
+      animation: fadeInDown 1.2s;
+    }
+    .animated-icons span {
+      font-size: 1.6rem;
+      margin: 0 0.18rem;
+      animation: bounce 1.6s infinite alternate;
+    }
+    .animated-icons span:nth-child(2) { animation-delay: 0.4s; }
+    .animated-icons span:nth-child(3) { animation-delay: 0.8s; }
+    @keyframes bounce { to { transform: translateY(-8px); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; } }
+    .hero p {
+      color: #e2e8f0;
+      font-size: 1.1rem;
+      margin: 0.8rem auto 1.2rem auto;
+      max-width: 560px;
+    }
+    .social-btns {
+      margin: 1.1rem 0 1.6rem 0;
+    }
+    .social-btns a {
+      display: inline-block;
+      margin: 0 8px;
+      padding: 0.73rem 1.1rem;
+      border-radius: 50px;
+      background: rgba(0,255,188,0.11);
+      color: #00ffbc;
+      font-size: 1.2rem;
+      position: relative;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #00ffbc15;
+      text-decoration: none;
+      backdrop-filter: blur(2px);
+      transition: background 0.18s, color 0.15s, transform 0.17s;
+    }
+    .social-btns a:hover {
+      background: #00ffbc;
+      color: #15181c;
+      transform: scale(1.07);
+    }
+    .social-btns a i {
+      margin-right: 8px;
+      vertical-align: middle;
+      font-size: 1.16em;
+    }
+    .resume-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffbc 60%, #00d6ff 100%);
+      color: #181818;
+      margin: 0.5rem auto 0 auto;
+      padding: 0.7rem 2rem;
+      border-radius: 3rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 10px #00ffbc24;
+      text-decoration: none;
+      transition: background 0.18s, color 0.11s, transform 0.14s;
+      border: none;
+      outline: none;
+      animation: fadeInUp 1.4s;
+    }
+    .resume-btn:hover {
+      background: linear-gradient(90deg, #00d6ff 0%, #00ffbc 80%);
+      color: #141d2b;
+      transform: scale(1.06);
+    }
 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px);}
+      to { opacity: 1; }
+    }
+
+    /* About Section */
+    .about {
+      margin: 2.5rem auto 0 auto;
+      max-width: 660px;
+      background: rgba(36,44,77,0.81);
+      box-shadow: 0 4px 24px #00ffbc17;
+      border-radius: 1.3rem;
+      padding: 2.3rem 1.8rem 2rem 1.8rem;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      border: 1.5px solid #00ffbc40;
+      animation: fadeInUp 1.9s;
+      backdrop-filter: blur(4px);
+    }
+    .about h2 {
+      font-size: 1.7rem;
+      color: #00ffbc;
+      margin: 0 0 1.2rem 0;
+      text-shadow: 0 2px 14px #00ffbc14;
+    }
+    .about .about-header {
+      font-size: 1.22rem;
+      background: rgba(0,255,188,0.08);
+      color: #13e9a2;
+      border-radius: 0.9rem;
+      padding: 0.27rem 1.2rem 0.23rem 1.2rem;
+      margin-bottom: 1.06rem;
+      font-weight: 600;
+      display: inline-block;
+      letter-spacing: 0.04em;
+      border: 1px dashed #00ffbc50;
+      animation: fadeInDown 1.2s;
+    }
+    .about-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 0.4rem;
+      justify-content: center;
+    }
+    .about-card {
+      flex: 1 1 270px;
+      background: rgba(15,24,39,0.77);
+      border-radius: 0.9rem;
+      min-width: 245px;
+      box-shadow: 0 1.5px 10px #00ffbc14;
+      padding: 1.2rem 1.1rem 1.05rem 1.1rem;
+      margin-bottom: 0.1rem;
+      transition: transform 0.16s, box-shadow 0.13s;
+      border: 1px solid #00ffbc20;
+    }
+    .about-card:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 6px 28px #00ffbc18;
+      border: 1.5px solid #00ffbc67;
+    }
+    .card-badge {
+      display: inline-block;
+      background: #00ffbc;
+      color: #191e2a;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      margin-bottom: 0.53rem;
+      padding: 0.18rem 0.68rem;
+      box-shadow: 0 1px 6px #00ffbc22;
+    }
+    .about-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .about-card ul li {
+      margin: 0.56rem 0 0.36rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .about-card ul li:before {
+      content: "\2022";
+      color: #00ffbc;
+      font-size: 1.22em;
+      position: absolute;
+      left: 0;
+      top: 0.05em;
+    }
+    .footer {
+      text-align: center;
+      color: #aaa;
+      margin-top: 2.6rem;
+      font-size: 1.05rem;
+      padding-bottom: 2.2rem;
+    }
+    @media (max-width: 860px) {
+      .about-cards { flex-direction: column; gap: 1.2rem; }
+      .about-card { min-width: 0; }
+      .about { padding: 2.2rem 0.7rem; }
+    }
+  </style>
 </head>
 <body>
   <section class="hero">
     <img src="avatar.png" alt="Rajan Jha Avatar" class="avatar" />
-    <h1>👋 Hi! I’m <span class="highlight">Rajan Kumar Jha</span></h1>
-    <p class="typing">
-      Aspiring Data Analyst • BCom (H) Accounting & Finance Graduate
-    </p>
+    <h1>
+      <span class="typewriter" id="typewriter"></span>
+    </h1>
     <div class="animated-icons">
-      <span>📊</span> <span>💻</span> <span>📈</span>
+      <span>📊</span> <span>💻</span> <span>🤖</span> <span>📈</span>
     </div>
     <p>
-      Turning data into insights. Passionate about analytics, finance, and bridging the gap between business and technology.<br>
+      Turning data into insights with creativity, analysis, and a love for technology.<br>
       Let's connect and grow together!
     </p>
     <div class="social-btns">
-      <a href="https://www.linkedin.com/in/rajanjha13/" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/rajanjha_18/" target="_blank">Instagram</a>
-      <a href="https://github.com/rajanjha13" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/rajanjha13/" target="_blank">
+        <i class="fab fa-linkedin"></i>LinkedIn
+      </a>
+      <a href="https://www.instagram.com/rajanjha_18/" target="_blank">
+        <i class="fab fa-instagram"></i>Instagram
+      </a>
+      <a href="https://github.com/rajanjha13" target="_blank">
+        <i class="fab fa-github"></i>GitHub
+      </a>
     </div>
-    <a href="Rajan_Jh_Resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
+    <a href="Rajan_Jh_Resume.pdf" class="resume-btn" target="_blank">
+      <i class="fa fa-file-alt"></i> View Resume
+    </a>
   </section>
 
   <section class="about">
-    <h2>About Me</h2>
-    <ul>
-      <li>🎓 BCom (H) Accounting & Finance, The Bhawanipur Education Society College</li>
-      <li>💡 Skills: Python, SQL, Power BI, Financial Accounting, Digital Marketing, MS Office, Google Workspace, Tally, WordPress</li>
-      <li>🏆 Reliance Foundation Scholar | Tally Level 2 Certified | Excel & AI Courses</li>
-      <li>🌟 Aim: Leverage analytics to drive business growth and make data-driven decisions</li>
-    </ul>
+    <div class="about-header">✨ About Me</div>
+    <div class="about-cards">
+      <div class="about-card">
+        <span class="card-badge"><i class="fa fa-graduation-cap"></i> Education</span>
+        <ul>
+          <li>BCom (H), Accounting & Finance - The Bhawanipur Education Society College (2022–2025)</li>
+          <li>Higher Secondary - Hariyana Vidya Mandir (2020–2022)</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <span class="card-badge"><i class="fa fa-lightbulb"></i> Skills</span>
+        <ul>
+          <li>Python, SQL, Power BI</li>
+          <li>Financial Accounting, Tally</li>
+          <li>MS Office, Google Workspace, WordPress</li>
+          <li>Digital Marketing (Google, Meta, YouTube)</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <span class="card-badge"><i class="fa fa-bookmark"></i> Achievements</span>
+        <ul>
+          <li>Reliance Foundation Scholar (2023)</li>
+          <li>Tally Level 2 Certified</li>
+          <li>Excel Formatting & AI Courses</li>
+          <li>Shri Ram Trading Challenge – SRCC</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <span class="card-badge"><i class="fa fa-bullseye"></i> Aims</span>
+        <ul>
+          <li>Turn data into business growth 🚀</li>
+          <li>Bridge finance and analytics</li>
+          <li>Always learning, always evolving</li>
+          <li>Build a tech-driven, impactful career</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="footer">
-    <p>© 2025 Rajan Kumar Jha • Data fuels progress!</p>
+    <p>© 2025 Rajan Kumar Jha &mdash; <span style="opacity:.7;">Data fuels progress!</span></p>
   </section>
+
+  <!-- Typewriter Animation Script -->
+  <script>
+    const roles = [
+      "Hi, I am Rajan Kumar Jha.",
+      "Aspiring Data Analyst.",
+      "AI & Tech Lover.",
+      "Finance Enthusiast.",
+    ];
+    const el = document.getElementById('typewriter');
+    let part = 0, partIndex = 0, interval, removing = false;
+    function type() {
+      const text = roles[part];
+      if (!removing) {
+        el.textContent = text.substring(0, partIndex + 1);
+        partIndex++;
+        if (partIndex === text.length) {
+          removing = true;
+          setTimeout(type, 1200);
+          return;
+        }
+      } else {
+        el.textContent = text.substring(0, partIndex - 1);
+        partIndex--;
+        if (partIndex === 0) {
+          removing = false;
+          part = (part + 1) % roles.length;
+        }
+      }
+      setTimeout(type, removing ? 42 : 64);
+    }
+    window.onload = type;
+  </script>
 </body>
 </html>
